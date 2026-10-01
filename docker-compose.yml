@@ -1,0 +1,12 @@
+services:
+  backend:
+    build: .
+    container_name: probash-mart-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./media:/app/media
+      - ./staticfiles:/app/staticfiles
+    restart: unless-stopped
